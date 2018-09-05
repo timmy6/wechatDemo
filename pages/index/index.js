@@ -9,9 +9,26 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    name:'timmy',
-    userId:123,
-    show: true
+    name: 'timmy',
+    userId: 123,
+    show: true,
+    array: [{
+      message: 'hello'
+    }, {
+      message: 'wrold'
+    }, {
+      message: '!'
+    }],
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    },
+    itemb: {
+      index: 1,
+      msg: 'this is a templateb',
+      time: '2016-09-16'
+    }
   },
   //事件处理函数
   bindViewTap: function() {
@@ -19,13 +36,13 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -56,15 +73,15 @@ Page({
     })
   },
 
-  toast: function(e){
+  toast: function(e) {
     wx.showToast({
       title: '哈哈哈',
       icon: 'loading',
-      
+
     })
   },
 
-  onShow: function(){
+  onShow: function() {
     loger.printLog("这是打印一个日志")
   }
 })

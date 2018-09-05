@@ -27,4 +27,22 @@
     <view>block1</view>
     <view>block2</view>
   </block>
+
+
+  <block wx:for="{{array}}" wx:for-item="msg" wx:key="index">
+    <text id="messageIndex-{{index}}">{{index}}. {{msg.message}}</text>
+  </block>
+
+<template name="msgItem">
+  <view>
+    <text> {{index}}: {{msg}} </text>
+    <text> Time: {{time}} </text>
+  </view>
+</template>
+
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...itemb}}"/>
+<template is="msgItem" data="{{...itemb}}"/>
+<template is="msgItem" data="{{...itemb}}"/>
+
 </view>
