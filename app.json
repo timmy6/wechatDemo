@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/home"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,10 +12,29 @@
   "tabBar": {
     "list":[{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "images/house.png",
+      "selectedIconPath": "images/house_hl.png"
     },{
       "pagePath": "pages/logs/logs",
-      "text": "我的"
+      "text": "好看",
+      "iconPath": "images/news.png",
+      "selectedIconPath": "images/news_hl.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "村里",
+      "iconPath": "images/village.png",
+      "selectedIconPath": "images/village_hl.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "问答",
+      "iconPath": "images/answer.png",
+      "selectedIconPath": "images/answer_hl.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "我的",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my_hl.png"
     }]
   },
   "networkTimeout": {

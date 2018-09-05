@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const loger = require("../../utils/loger.js")
 
 Page({
   data: {
@@ -8,7 +9,9 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    name:'timmy'
+    name:'timmy',
+    userId:123,
+    show: true
   },
   //事件处理函数
   bindViewTap: function() {
@@ -59,5 +62,9 @@ Page({
       icon: 'loading',
       
     })
+  },
+
+  onShow: function(){
+    loger.printLog("这是打印一个日志")
   }
 })

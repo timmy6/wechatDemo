@@ -12,6 +12,19 @@
   </view>
 
   <view class="helloworld">
-    <text bindtap='toast' class="helloworld">hello:{{name}}</text>
+    <text bindtap='toast' class="helloworld">{{userId}}</text>
   </view>
+
+  <view wx:if="{{show}}" hidden='{{userId==123 ? true : false}}'>
+    TRUE
+  </view>
+  <view wx:else>
+    FALSE
+  </view>
+
+
+  <block>
+    <view>block1</view>
+    <view>block2</view>
+  </block>
 </view>
