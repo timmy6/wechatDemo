@@ -11,7 +11,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     name: 'timmy',
     userId: 123,
-    show: true,
+    show: false,
     array: [{
       message: 'hello'
     }, {
