@@ -1,4 +1,6 @@
 <!--index.wxml-->
+<import src="../common/template_item.wxml"/>
+
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -8,7 +10,7 @@
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text data-userid="123456" data-user-name = "liuqiming"class="user-motto" bindtap="tabMessage" id='usermottoId'>{{motto}}</text>
   </view>
 
   <view class="helloworld">
@@ -33,16 +35,25 @@
     <text id="messageIndex-{{index}}">{{index}}. {{msg.message}}</text>
   </block>
 
-<template name="msgItem">
-  <view>
-    <text> {{index}}: {{msg}} </text>
-    <text> Time: {{time}} </text>
-  </view>
+  <template name="msgItem">
+    <view>
+      <text> {{index}}: {{msg}} </text>
+      <text> Time: {{time}} </text>
+    </view>
+  </template>
+
+  <template is="msgItem" data="{{...item}}" />
+  <template is="msgItem" data="{{...itemb}}" />
+  <template is="msgItem" data="{{...itemb}}" />
+  <template is="msgItem" data="{{...itemb}}" />
+
+<template is="item" data="{{text:'index page trans data'}}">
 </template>
 
-<template is="msgItem" data="{{...item}}"/>
-<template is="msgItem" data="{{...itemb}}"/>
-<template is="msgItem" data="{{...itemb}}"/>
-<template is="msgItem" data="{{...itemb}}"/>
+<include src="../common/header.wxml"/>
+<include src="../common/footer.wxml"/>
 
+<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 </view>

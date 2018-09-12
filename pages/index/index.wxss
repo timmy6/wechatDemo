@@ -23,3 +23,11 @@
 .helloworld{
   color: #aaa;
 }
+
+view {
+  border-bottom: 1px solid #666666;
+}
+
+.usermotto {
+  background-color: red;
+}

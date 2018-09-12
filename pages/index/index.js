@@ -83,5 +83,11 @@ Page({
 
   onShow: function() {
     loger.printLog("这是打印一个日志")
+  },
+
+  tabMessage: function(event) {
+    console.log(event)
+    console.log("data-"+event.target.dataset.userid)
+    console.log(event.target.dataset.userName)
   }
 })
