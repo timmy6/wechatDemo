@@ -28,15 +28,16 @@ Page({
       index: 1,
       msg: 'this is a templateb',
       time: '2016-09-16'
-    }
+    },
+    newsdata: ''
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  onLoad: function() {
+  onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -64,7 +65,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -73,7 +74,7 @@ Page({
     })
   },
 
-  toast: function(e) {
+  toast: function (e) {
     wx.showToast({
       title: '哈哈哈',
       icon: 'loading',
@@ -81,13 +82,28 @@ Page({
     })
   },
 
-  onShow: function() {
+  onShow: function () {
     loger.printLog("这是打印一个日志")
   },
 
-  tabMessage: function(event) {
+  tabMessage: function (event) {
     console.log(event)
-    console.log("data-"+event.target.dataset.userid)
+    console.log("data-" + event.target.dataset.userid)
     console.log(event.target.dataset.userName)
+  },
+  loadData: function () {
+    var that = this;
+    wx.request({
+      url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10', //仅为实例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          newsdata: res.data
+        })
+      }
+    })
   }
 })

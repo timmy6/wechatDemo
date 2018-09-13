@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<import src="../common/template_item.wxml"/>
+<import src="../common/template_item.wxml" />
 
 <view class="container">
   <view class="userinfo">
@@ -10,7 +10,7 @@
     </block>
   </view>
   <view class="usermotto">
-    <text data-userid="123456" data-user-name = "liuqiming"class="user-motto" bindtap="tabMessage" id='usermottoId'>{{motto}}</text>
+    <text data-userid="123456" data-user-name="liuqiming" class="user-motto" bindtap="tabMessage" id='usermottoId'>{{motto}}</text>
   </view>
 
   <view class="helloworld">
@@ -47,13 +47,20 @@
   <template is="msgItem" data="{{...itemb}}" />
   <template is="msgItem" data="{{...itemb}}" />
 
-<template is="item" data="{{text:'index page trans data'}}">
-</template>
+  <template is="item" data="{{text:'index page trans data'}}">
+  </template>
 
-<include src="../common/header.wxml"/>
-<include src="../common/footer.wxml"/>
+  <include src="../common/header.wxml" />
+  <include src="../common/footer.wxml" />
 
-<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
 
-<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+  <button type='primary' bindtap='loadData'>加载数据</button>
+
+<view wx:for="{{newsdata}}">
+  <image style='width:300px;height:200px;' src='{{item.thumbnail_pic_s}}'></image>
+  [{{item.realtype}}]{{item.title}}
+</view>
 </view>
