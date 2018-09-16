@@ -11,7 +11,7 @@ App({
         // 发送res.code 到后台换取 openId唯一, sessionKey, unionId
       }
     })
-    // 获取用户信息
+    // 获取用户信息的
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
